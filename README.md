@@ -1,6 +1,6 @@
 README file for ShowdyPi
 
-ShowdyPi is a one file solution for automating TV show downloads for users with an NewzNab account using NZBget (and soon Sabnzbd).
+ShowdyPi is a one file solution for automating TV show downloads for users with an NewzNab (tested with usernet-crawler) account using NZBget (and soon Sabnzbd).
 
 There are plenty of auto show downloaders at the moment. Most of them are far superior to this script. 
 The main reason for this script is for running on very old, embedded, headless (or other) environments. For example, Raspberry Pi, satellite receivers, phones, very old PCs, STB etc. It is completely command line driven and requires little configuration and/or dependencies*
