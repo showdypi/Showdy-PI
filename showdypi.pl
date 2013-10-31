@@ -445,7 +445,8 @@ sub getsome {
 	my $query = "SELECT e.*, l.tvrage_id as tvrage_id, l.category, l.showname
 				  FROM episodes e 
 				  JOIN lookout l ON e.tvdb_id = l.tvdb_id 
-				  WHERE downloaded=0 
+				  WHERE downloaded=0
+				  AND air_date !=0 
 				  AND air_date <= ?
 				  ORDER by season,episode";
 
