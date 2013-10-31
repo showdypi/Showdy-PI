@@ -40,6 +40,7 @@ sudo apt-get install libjson-xs-perl \
 libio-socket-ssl-perl \   
 libwww-perl \  
 libxml-simple-perl \  
+libdbi-perl  \  
 libdbd-sqlite3 \  
 libdbd-sqlite3-perl \  
 libfrontier-rpc-perl \  
