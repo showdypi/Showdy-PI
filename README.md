@@ -7,6 +7,7 @@ There are plenty of auto show downloaders at the moment. Most of them are far su
 What does it do?
 
 ShowdyPi will get your TV shows for you. The workflow is like this:
+
 Configure ShowdyPi with your NewzNab details (URL, API key) and NZBGet deatail (IP, port, API key)
 Use the command line interface to search and add shows to your ShowdyPi database.
 ShowdyPi will then connect to the internet (Trakt.tv via API) and pull down season/episode information for your shows.
@@ -16,19 +17,28 @@ If available on you NewzNab server ShowdyPi will then select the best files size
 
 Once you're configured add ShowdyPi to your crontab and forget about it, it'll do the rest.
 
+*** A note on Trakt TV API ***
+Showdy ships with an API key for Trakt.tv. It is STRONGLY recommended that you create your own account and API. Account setup is free and no validation is required.
+I can't be certain that at some point in the future the shipped API key becomes unuseable! PLEASE, get your own API key!
 
-Install details.
+Install details. 
 
 Dependencies: perl use JSON::XS; IO::Socket::SSL, LWP::UserAgent, XML::Simple, DBI, Frontier::Client
 
 For Debian / Ubuntu install from packages
 
 sudo apt-get install libjson-xs-perl \
-libio-socket-ssl-perl 
+
+libio-socket-ssl-perl \ 
+ 
 libwww-perl \
+
 libxml-simple-perl \
+
 libdbd-sqlite3 \
+
 libdbd-sqlite3-perl \
+
 libfrontier-rpc-perl \
 
 
