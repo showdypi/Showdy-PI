@@ -9,39 +9,40 @@ What does it do?
 
 ShowdyPi will get your TV shows for you. The workflow is like this:
 
-Configure ShowdyPi with your NewzNab details (URL, API key) and NZBGet deatail (IP, port, API key)\n
-Use the command line interface to search and add shows to your ShowdyPi database.
-ShowdyPi will then connect to the internet (Trakt.tv via API) and pull down season/episode information for your shows.
-Configure each show, indicating which shows you have already seen and which are outstanding.
-ShowdyPi will then (when run manually or launched on a schedule) read the local database for unseen shows, connect to Trakt.tv, get the latest show available and send this request to your NewzNab server.
-If available on you NewzNab server ShowdyPi will then select the best files size (based on your preferences)and send that file to your NZBGet application for download.
+Configure ShowdyPi with your NewzNab details (URL, API key) and NZBGet deatail (IP, port, API key)  
+Use the command line interface to search and add shows to your ShowdyPi database.  
+ShowdyPi will then connect to the internet (Trakt.tv via API) and pull down season/episode information for your shows.  
+Configure each show, indicating which shows you have already seen and which are outstanding.  
+ShowdyPi will then (when run manually or launched on a schedule) read the local database for unseen shows, connect to Trakt.tv, get the latest show available and send this request to your NewzNab server.  
+If available on you NewzNab server ShowdyPi will then select the best files size (based on your preferences)and send that file to your NZBGet application for download.  
 
 Once you're configured add ShowdyPi to your crontab and forget about it, it'll do the rest.
 
-*** A note on Trakt TV API ***
-Showdy ships with an API key for Trakt.tv. It is STRONGLY recommended that you create your own account and API. Account setup is free and no validation is required.
-I can't be certain that at some point in the future the shipped API key becomes unuseable! PLEASE, get your own API key!
+<b>*** A note on Trakt TV API ***</b>  
+Showdy ships with an API key for Trakt.tv. It is <b>STRONGLY</b> recommended that you create your own account and API. Account setup is free and no validation is required.
+I can't be certain that at some point in the future the shipped API key becomes unuseable!  
+<b>PLEASE, get your own API key!</b>
 
 Install details. 
 
-Dependencies: perl use JSON::XS; IO::Socket::SSL, LWP::UserAgent, XML::Simple, DBI, Frontier::Client
+Dependencies: 
+  perl   
+  JSON::XS  
+  IO::Socket::SSL  
+  LWP::UserAgent  
+  XML::Simple  
+  DBI  
+  Frontier::Client  
 
 For Debian / Ubuntu install from packages
 
-sudo apt-get install libjson-xs-perl \
-
-libio-socket-ssl-perl \ 
- 
-libwww-perl \
-
-libxml-simple-perl \
-
-libdbd-sqlite3 \
-
-libdbd-sqlite3-perl \
-
-libfrontier-rpc-perl \
-
+sudo apt-get install libjson-xs-perl \  
+libio-socket-ssl-perl \   
+libwww-perl \  
+libxml-simple-perl \  
+libdbd-sqlite3 \  
+libdbd-sqlite3-perl \  
+libfrontier-rpc-perl \  
 
 Windows: Not tested but may work!
 
@@ -49,14 +50,14 @@ Usage:
 
 To run the application e.g. to set up the config, add/remove shows, build you database etc:
 
-perl showdypi.pl
-This will present you with the interface where you can configure your setup
+perl showdypi.pl  
+ This will present you with the interface where you can configure your setup
 
-perl showdypi.pl --getsome
-This scans your database for unwatched shows and checks to see if they're available for download. Gets them if available.
+perl showdypi.pl --getsome  
+ This scans your database for unwatched shows and checks to see if they're available for download. Gets them if available.
 
-perl showdypi.pl --upgrade
-This upgrades the show/season/episode database. Useful for shows still being broadcast as the episode information isn't always available in advance. For a large database this can be a little intensive. 
+perl showdypi.pl --upgrade  
+ This upgrades the show/season/episode database. Useful for shows still being broadcast as the episode information isn't always available in advance. For a large database this can be a little intensive. 
 Recommend running this every couple of nights, when the system is idle
 
 Both --upgrade and --getsome take a further argument of --debug. This outputs some extra information that can be useful for debugging etc.
